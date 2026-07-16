@@ -12,7 +12,19 @@ https://donghyeon-dev.github.io/fm26-mobile-wonderkids/
 - 상단 1: 포텐순 TOP 12 — 가격/영입 난이도 제외, 성장성 우선
 - 상단 2: 즉시 주전감·가성비 TOP 10 — 비싸지 않고 바로 1군/로테이션에 넣기 좋은 선수
 - 전술 섹션: FM26 Mobile 추천 전술 7개 — 3-4-3, 4-3-3, 4-2-3-1, 5-2-1-2 등
-- 전체 표: 가성비 우선순위, 선수 검색, 포지션 필터, 가격대 필터, 즉전감 필터 포함
+- 전체 표: 가성비 우선순위, 선수 검색, 검색명/성 표기, 포지션 필터, 가격대 필터, 즉전감 필터 포함
+
+## 검색 팁
+
+FM26 Mobile에서는 선수명이 `성, 이름` 형태로 보이거나 악센트가 포함되어 검색이 어려울 수 있습니다.
+페이지의 `검색명` 컬럼을 우선 사용하세요.
+
+예:
+
+- Eli Junior Kroupi → `Kroupi`
+- Geovany Quenda → `Quenda`
+- Ben Doak → `Doak` 또는 `Gannon Doak`
+- Ayyoub Bouaddi → `Bouaddi`
 
 ## 데이터 주의
 

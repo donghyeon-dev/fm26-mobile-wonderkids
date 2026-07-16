@@ -146,7 +146,7 @@
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>가성비 순위</th><th>선수</th><th>포지션</th><th>나이</th><th>소속</th><th>성장성</th><th>가격대</th><th>즉전감</th><th>메모</th></tr></thead>
+          <thead><tr><th>가성비 순위</th><th>선수</th><th>검색명</th><th>포지션</th><th>나이</th><th>소속</th><th>성장성</th><th>가격대</th><th>즉전감</th><th>메모</th></tr></thead>
           <tbody id="tbody"></tbody>
         </table>
         <div id="empty" class="empty" style="display:none">조건에 맞는 선수가 없습니다.</div>
@@ -155,7 +155,7 @@
 
     <footer>
       <strong>출처/주의</strong><br/>
-      FMM Vibe의 FM26 Mobile Wonderkids Complete List와 FM26 Mobile 추천 글을 바탕으로 정리했습니다. 상단 포텐순 리스트는 가격을 제외한 성장성 기준이고, 즉전감 리스트와 전체 표는 가성비/실사용성을 반영했습니다. 별점은 잠재력 평가이며, 실제 능력치/가격/이적 가능성은 세이브, 선택 리그, 패치 버전에 따라 달라질 수 있습니다. 아이폰에서는 이 페이지를 보고 게임 내 선수 검색으로 확인하는 방식이 가장 안전합니다.<br/>
+      FMM Vibe의 FM26 Mobile Wonderkids Complete List와 FM26 Mobile 추천 글을 바탕으로 정리했습니다. 상단 포텐순 리스트는 가격을 제외한 성장성 기준이고, 즉전감 리스트와 전체 표는 가성비/실사용성을 반영했습니다. 별점은 잠재력 평가이며, 실제 능력치/가격/이적 가능성은 세이브, 선택 리그, 패치 버전에 따라 달라질 수 있습니다. 아이폰에서는 이 페이지를 보고 게임 내 선수 검색으로 확인하는 방식이 가장 안전합니다. 선수 검색은 이름 전체보다 <strong>성/검색명</strong>으로 먼저 검색하세요. 예: Eli Junior Kroupi → Kroupi, Geovany Quenda → Quenda.<br/>
       Sources: <a href="https://fmmvibe.com/forums/topic/50429-fm26-mobile-wonderkids-complete-list/">FMM Vibe</a>, <a href="https://ingenuityfantasy.com/feature-articles/fm26-mobile-best-wonderkids-the-touchscreen-gods/">Ingenuity Fantasy Wonderkids</a>, <a href="https://ingenuityfantasy.com/feature-articles/7550-2/">Ingenuity Fantasy Tactics</a>, <a href="https://vortexgaming.io/en/postdetail/735606">Vortex Gaming Tactics</a>
     </footer>
   </div>
@@ -163,50 +163,50 @@
   <script>
 
     const potentialPlayers = [
-      {rank:1,name:'Lamine Yamal',pos:'M/AMR',age:18,club:'FC Barcelona',stars:'5★',budget:'비쌈',ready:'높음',note:'포텐 최상급. 가격/영입 난이도는 매우 높지만 순수 성장성 기준 최상위.'},
-      {rank:2,name:'Endrick',pos:'AMR/ST',age:18,club:'Real Madrid',stars:'5★',budget:'비쌈',ready:'높음',note:'ST/AMR 최상급 성장성. 즉전감도 있지만 영입 난이도 높음.'},
-      {rank:3,name:'Estêvão',pos:'AMRC',age:18,club:'Chelsea',stars:'5★',budget:'비쌈',ready:'높음',note:'오른쪽 윙/공미 최상급 포텐. 빅클럽용 장기 핵심.'},
-      {rank:4,name:'Ethan Nwaneri',pos:'MC/AMRLC',age:18,club:'Arsenal',stars:'5★',budget:'비쌈',ready:'높음',note:'공미/윙/중미 멀티 5성급. 포텐순 최상위.'},
-      {rank:5,name:'Kenan Yıldız',pos:'AMRLC/ST',age:20,club:'Juventus',stars:'5★',budget:'비쌈',ready:'높음',note:'2선과 ST를 모두 커버하는 5성급 공격 자원.'},
-      {rank:6,name:'Ayyoub Bouaddi',pos:'DM/MC',age:17,club:'Lille',stars:'5★',budget:'저렴',ready:'보통',note:'중미/수미 5성급. 포텐 대비 가격이 맞으면 최우선 영입.'},
-      {rank:7,name:'Eli Junior Kroupi',pos:'ST',age:19,club:'Bournemouth',stars:'5★',budget:'비쌈',ready:'높음',note:'스트라이커 5성급 성장성. 즉전감도 좋은 편.'},
-      {rank:8,name:'Pau Cubarsí',pos:'DC',age:18,club:'FC Barcelona',stars:'4.5★',budget:'비쌈',ready:'높음',note:'센터백 최상위 포텐. 가격/영입 난이도는 높음.'},
-      {rank:9,name:'Dean Huijsen',pos:'DC',age:20,club:'Real Madrid',stars:'4.5★',budget:'비쌈',ready:'높음',note:'즉전감과 성장성을 모두 가진 고급 센터백.'},
-      {rank:10,name:'Marc Bernal',pos:'DM/MC',age:18,club:'FC Barcelona',stars:'4.5★',budget:'비쌈',ready:'보통',note:'수미/중미 장기 핵심감. 포텐 중심 리스트용.'},
-      {rank:11,name:'João Neves',pos:'DM/MC',age:20,club:'PSG',stars:'4.5★',budget:'비쌈',ready:'높음',note:'바로 주전급 중미. 가격은 매우 높을 가능성.'},
-      {rank:12,name:'Geovany Quenda',pos:'M/AMRL',age:18,club:'Sporting CP',stars:'4.5★',budget:'중간',ready:'높음',note:'윙 포텐과 실사용성을 모두 갖춘 4.5성 후보.'}
+      {rank:1,name:'Lamine Yamal',search:'Yamal',pos:'M/AMR',age:18,club:'FC Barcelona',stars:'5★',budget:'비쌈',ready:'높음',note:'포텐 최상급. 가격/영입 난이도는 매우 높지만 순수 성장성 기준 최상위.'},
+      {rank:2,name:'Endrick',search:'Endrick',pos:'AMR/ST',age:18,club:'Real Madrid',stars:'5★',budget:'비쌈',ready:'높음',note:'ST/AMR 최상급 성장성. 즉전감도 있지만 영입 난이도 높음.'},
+      {rank:3,name:'Estêvão',search:'Estêvão',pos:'AMRC',age:18,club:'Chelsea',stars:'5★',budget:'비쌈',ready:'높음',note:'오른쪽 윙/공미 최상급 포텐. 빅클럽용 장기 핵심.'},
+      {rank:4,name:'Ethan Nwaneri',search:'Nwaneri, Ethan',pos:'MC/AMRLC',age:18,club:'Arsenal',stars:'5★',budget:'비쌈',ready:'높음',note:'공미/윙/중미 멀티 5성급. 포텐순 최상위.'},
+      {rank:5,name:'Kenan Yıldız',search:'Yıldız, Kenan',pos:'AMRLC/ST',age:20,club:'Juventus',stars:'5★',budget:'비쌈',ready:'높음',note:'2선과 ST를 모두 커버하는 5성급 공격 자원.'},
+      {rank:6,name:'Ayyoub Bouaddi',search:'Bouaddi, Ayyoub',pos:'DM/MC',age:17,club:'Lille',stars:'5★',budget:'저렴',ready:'보통',note:'중미/수미 5성급. 포텐 대비 가격이 맞으면 최우선 영입.'},
+      {rank:7,name:'Eli Junior Kroupi',search:'Kroupi, Eli Junior',pos:'ST',age:19,club:'Bournemouth',stars:'5★',budget:'비쌈',ready:'높음',note:'스트라이커 5성급 성장성. 즉전감도 좋은 편.'},
+      {rank:8,name:'Pau Cubarsí',search:'Cubarsí, Pau',pos:'DC',age:18,club:'FC Barcelona',stars:'4.5★',budget:'비쌈',ready:'높음',note:'센터백 최상위 포텐. 가격/영입 난이도는 높음.'},
+      {rank:9,name:'Dean Huijsen',search:'Huijsen, Dean',pos:'DC',age:20,club:'Real Madrid',stars:'4.5★',budget:'비쌈',ready:'높음',note:'즉전감과 성장성을 모두 가진 고급 센터백.'},
+      {rank:10,name:'Marc Bernal',search:'Bernal, Marc',pos:'DM/MC',age:18,club:'FC Barcelona',stars:'4.5★',budget:'비쌈',ready:'보통',note:'수미/중미 장기 핵심감. 포텐 중심 리스트용.'},
+      {rank:11,name:'João Neves',search:'Neves, João',pos:'DM/MC',age:20,club:'PSG',stars:'4.5★',budget:'비쌈',ready:'높음',note:'바로 주전급 중미. 가격은 매우 높을 가능성.'},
+      {rank:12,name:'Geovany Quenda',search:'Quenda, Geovany',pos:'M/AMRL',age:18,club:'Sporting CP',stars:'4.5★',budget:'중간',ready:'높음',note:'윙 포텐과 실사용성을 모두 갖춘 4.5성 후보.'}
     ];
 
     const players = [
-      {rank:1,name:'Joane Gadou',pos:'DC',age:18,club:'RB Salzburg',stars:'4★',budget:'저렴',ready:'높음',note:'센터백 가성비 1순위. 약 £3m 언급, 바로 백업/로테 가능.'},
-      {rank:2,name:'Chido Obi',pos:'ST',age:17,club:'Man Utd',stars:'4★',budget:'저렴',ready:'보통',note:'저렴한 스트라이커 후보. 약 £7m 언급, 로테/컵대회부터 좋음.'},
-      {rank:3,name:'Kerim Alajbegović',pos:'AML/AMR/AMC',age:17,club:'RB Salzburg',stars:'4.5★',budget:'저렴',ready:'보통',note:'2선 멀티. 약 £4.5m 언급, 성장성 대비 가격이 좋음.'},
-      {rank:4,name:'Ayyoub Bouaddi',pos:'DM/MC',age:17,club:'Lille',stars:'5★',budget:'저렴',ready:'보통',note:'5성급 성장성. 약 £7.5m 언급, 가격 맞으면 최우선.'},
-      {rank:5,name:'Pedro Lima',pos:'DR/WBR',age:19,club:'Wolves',stars:'4★',budget:'중간',ready:'높음',note:'오른쪽 풀백 가성비. 바로 로테 가능.'},
-      {rank:6,name:'Tom Rothe',pos:'DL/WBL/DC',age:20,club:'Union Berlin',stars:'4★',budget:'중간',ready:'높음',note:'왼쪽 풀백 즉전감. 수비/윙백 겸용.'},
-      {rank:7,name:'Marc Guiu',pos:'ST',age:19,club:'Chelsea',stars:'4.5★',budget:'중간',ready:'높음',note:'피지컬형 ST. 임대/영입 모두 확인 가치.'},
-      {rank:8,name:'Sergey Pinyaev',pos:'AML/AMR',age:20,club:'Lokomotiv Moscow',stars:'4.5★',budget:'중간',ready:'높음',note:'바로 쓸 수 있는 윙어. 약 £15m 언급.'},
-      {rank:9,name:'Gabriel Moscardo',pos:'DM/MC',age:19,club:'PSG',stars:'4★',budget:'중간',ready:'높음',note:'수미/중미 로테. PSG 소속이라 이적 가능성 체크.'},
-      {rank:10,name:'Enzo Molebe',pos:'AML/ST',age:17,club:'Lyon',stars:'4★',budget:'저렴',ready:'보통',note:'약 £4.5m 언급. 공격 멀티 백업/육성.'},
-      {rank:11,name:'Geovany Quenda',pos:'AMR/AML',age:18,club:'Sporting CP',stars:'4.5★',budget:'중간',ready:'높음',note:'양쪽 윙 가능. 가격이 튀지 않으면 강추.'},
-      {rank:12,name:'Ben Doak',pos:'AMR/AML',age:19,club:'Bournemouth',stars:'4.5★',budget:'중간',ready:'높음',note:'속도형 윙어. 모바일 엔진에서 실사용 좋음.'},
-      {rank:13,name:'Francesco Pio Esposito',pos:'ST',age:20,club:'Inter',stars:'4.5★',budget:'중간',ready:'높음',note:'중앙 ST로 안정적인 로테/주전 후보.'},
-      {rank:14,name:'Chema Andrés',pos:'DM/MC',age:20,club:'Stuttgart',stars:'4.5★',budget:'중간',ready:'높음',note:'바로 쓰기 좋은 수미/중미.'},
-      {rank:15,name:'Guille Fernández',pos:'MC/AMC',age:17,club:'FC Barcelona',stars:'4.5★',budget:'중간',ready:'보통',note:'약 £12.5m 언급. 성장성 좋지만 초반은 로테.'},
-      {rank:16,name:'Malick Fofana',pos:'AML/AMR',age:20,club:'Lyon',stars:'4.5★',budget:'중간',ready:'높음',note:'즉전감 있는 윙어. 중상위권 팀에 적합.'},
-      {rank:17,name:'Archie Gray',pos:'DM/DR/MC',age:19,club:'Tottenham',stars:'4.5★',budget:'비쌈',ready:'높음',note:'멀티성이 최고. 비싸면 임대 확인.'},
-      {rank:18,name:'Luka Vušković',pos:'DC',age:18,club:'Tottenham',stars:'4.5★',budget:'중간',ready:'보통',note:'피지컬형 장기 핵심 CB. 가격 체크.'},
-      {rank:19,name:'Willy Kambwala',pos:'DC',age:20,club:'Villarreal',stars:'4.5★',budget:'중간',ready:'높음',note:'센터백 즉전 로테 가능성 높음.'},
-      {rank:20,name:'Finn Jeltsch',pos:'DM/DRC',age:18,club:'Stuttgart',stars:'4.5★',budget:'중간',ready:'보통',note:'수비 멀티 고성장 후보.'},
-      {rank:21,name:'Yunus Emre Konak',pos:'DM/MC',age:19,club:'Brentford',stars:'4★',budget:'저렴',ready:'보통',note:'가격 낮으면 실용적인 수미 후보.'},
-      {rank:22,name:'Mattia Liberali',pos:'AMC',age:18,club:'AC Milan',stars:'추천',budget:'저렴',ready:'보통',note:'약 £5.5m 언급. 가성비 AMC 후보.'},
-      {rank:23,name:'Harry Amass',pos:'DL/WBL',age:18,club:'Man Utd',stars:'4★',budget:'저렴',ready:'보통',note:'왼쪽 풀백 장기 육성. 로테부터 추천.'},
-      {rank:24,name:'Iván Fresneda',pos:'DR/WBR',age:20,club:'Sporting CP',stars:'4★',budget:'중간',ready:'높음',note:'FM 단골 우풀백 유망주. 즉전감 좋음.'},
-      {rank:25,name:'Semih Kılıçsoy',pos:'ST/AML',age:19,club:'Beşiktaş',stars:'4.5★',budget:'중간',ready:'높음',note:'ST/윙 겸용. 가성비 공격수 후보.'},
-      {rank:26,name:'Francesco Camarda',pos:'ST',age:17,club:'AC Milan',stars:'4.5★',budget:'비쌈',ready:'보통',note:'성장성은 훌륭하지만 가격이 높을 수 있음.'},
-      {rank:27,name:'Guillaume Restes',pos:'GK',age:20,club:'Toulouse',stars:'4★',budget:'중간',ready:'높음',note:'GK 중 즉전감 우선 추천.'},
-      {rank:28,name:'Dennis Seimen',pos:'GK',age:19,club:'Stuttgart',stars:'4★',budget:'중간',ready:'보통',note:'장기 주전감. 컵대회/로테부터.'},
-      {rank:29,name:'Vladyslav Krapyvtsov',pos:'GK',age:20,club:'Girona',stars:'4★',budget:'저렴',ready:'보통',note:'중위권 팀에서 확인할 만한 GK.'}
+      {rank:1,name:'Joane Gadou',search:'Gadou, Joane',pos:'DC',age:18,club:'RB Salzburg',stars:'4★',budget:'저렴',ready:'높음',note:'센터백 가성비 1순위. 약 £3m 언급, 바로 백업/로테 가능.'},
+      {rank:2,name:'Chido Obi',search:'Obi, Chido',pos:'ST',age:17,club:'Man Utd',stars:'4★',budget:'저렴',ready:'보통',note:'저렴한 스트라이커 후보. 약 £7m 언급, 로테/컵대회부터 좋음.'},
+      {rank:3,name:'Kerim Alajbegović',search:'Alajbegović, Kerim',pos:'AML/AMR/AMC',age:17,club:'RB Salzburg',stars:'4.5★',budget:'저렴',ready:'보통',note:'2선 멀티. 약 £4.5m 언급, 성장성 대비 가격이 좋음.'},
+      {rank:4,name:'Ayyoub Bouaddi',search:'Bouaddi, Ayyoub',pos:'DM/MC',age:17,club:'Lille',stars:'5★',budget:'저렴',ready:'보통',note:'5성급 성장성. 약 £7.5m 언급, 가격 맞으면 최우선.'},
+      {rank:5,name:'Pedro Lima',search:'Pedro Lima',pos:'DR/WBR',age:19,club:'Wolves',stars:'4★',budget:'중간',ready:'높음',note:'오른쪽 풀백 가성비. 바로 로테 가능.'},
+      {rank:6,name:'Tom Rothe',search:'Rothe, Tom',pos:'DL/WBL/DC',age:20,club:'Union Berlin',stars:'4★',budget:'중간',ready:'높음',note:'왼쪽 풀백 즉전감. 수비/윙백 겸용.'},
+      {rank:7,name:'Marc Guiu',search:'Guiu, Marc',pos:'ST',age:19,club:'Chelsea',stars:'4.5★',budget:'중간',ready:'높음',note:'피지컬형 ST. 임대/영입 모두 확인 가치.'},
+      {rank:8,name:'Sergey Pinyaev',search:'Pinyaev, Sergey',pos:'AML/AMR',age:20,club:'Lokomotiv Moscow',stars:'4.5★',budget:'중간',ready:'높음',note:'바로 쓸 수 있는 윙어. 약 £15m 언급.'},
+      {rank:9,name:'Gabriel Moscardo',search:'Gabriel Moscardo',pos:'DM/MC',age:19,club:'PSG',stars:'4★',budget:'중간',ready:'높음',note:'수미/중미 로테. PSG 소속이라 이적 가능성 체크.'},
+      {rank:10,name:'Enzo Molebe',search:'Molebe, Enzo',pos:'AML/ST',age:17,club:'Lyon',stars:'4★',budget:'저렴',ready:'보통',note:'약 £4.5m 언급. 공격 멀티 백업/육성.'},
+      {rank:11,name:'Geovany Quenda',search:'Quenda, Geovany',pos:'AMR/AML',age:18,club:'Sporting CP',stars:'4.5★',budget:'중간',ready:'높음',note:'양쪽 윙 가능. 가격이 튀지 않으면 강추.'},
+      {rank:12,name:'Ben Doak',search:'Gannon Doak, Ben',pos:'AMR/AML',age:19,club:'Bournemouth',stars:'4.5★',budget:'중간',ready:'높음',note:'속도형 윙어. 모바일 엔진에서 실사용 좋음.'},
+      {rank:13,name:'Francesco Pio Esposito',search:'Esposito, Francesco Pio',pos:'ST',age:20,club:'Inter',stars:'4.5★',budget:'중간',ready:'높음',note:'중앙 ST로 안정적인 로테/주전 후보.'},
+      {rank:14,name:'Chema Andrés',search:'Chema Andrés',pos:'DM/MC',age:20,club:'Stuttgart',stars:'4.5★',budget:'중간',ready:'높음',note:'바로 쓰기 좋은 수미/중미.'},
+      {rank:15,name:'Guille Fernández',search:'Guille Fernández',pos:'MC/AMC',age:17,club:'FC Barcelona',stars:'4.5★',budget:'중간',ready:'보통',note:'약 £12.5m 언급. 성장성 좋지만 초반은 로테.'},
+      {rank:16,name:'Malick Fofana',search:'Fofana, Malick',pos:'AML/AMR',age:20,club:'Lyon',stars:'4.5★',budget:'중간',ready:'높음',note:'즉전감 있는 윙어. 중상위권 팀에 적합.'},
+      {rank:17,name:'Archie Gray',search:'Gray, Archie',pos:'DM/DR/MC',age:19,club:'Tottenham',stars:'4.5★',budget:'비쌈',ready:'높음',note:'멀티성이 최고. 비싸면 임대 확인.'},
+      {rank:18,name:'Luka Vušković',search:'Vušković, Luka',pos:'DC',age:18,club:'Tottenham',stars:'4.5★',budget:'중간',ready:'보통',note:'피지컬형 장기 핵심 CB. 가격 체크.'},
+      {rank:19,name:'Willy Kambwala',search:'Kambwala, Willy',pos:'DC',age:20,club:'Villarreal',stars:'4.5★',budget:'중간',ready:'높음',note:'센터백 즉전 로테 가능성 높음.'},
+      {rank:20,name:'Finn Jeltsch',search:'Jeltsch, Finn',pos:'DM/DRC',age:18,club:'Stuttgart',stars:'4.5★',budget:'중간',ready:'보통',note:'수비 멀티 고성장 후보.'},
+      {rank:21,name:'Yunus Emre Konak',search:'Konak, Yunus Emre',pos:'DM/MC',age:19,club:'Brentford',stars:'4★',budget:'저렴',ready:'보통',note:'가격 낮으면 실용적인 수미 후보.'},
+      {rank:22,name:'Mattia Liberali',search:'Liberali',pos:'AMC',age:18,club:'AC Milan',stars:'추천',budget:'저렴',ready:'보통',note:'약 £5.5m 언급. 가성비 AMC 후보.'},
+      {rank:23,name:'Harry Amass',search:'Amass, Harry',pos:'DL/WBL',age:18,club:'Man Utd',stars:'4★',budget:'저렴',ready:'보통',note:'왼쪽 풀백 장기 육성. 로테부터 추천.'},
+      {rank:24,name:'Iván Fresneda',search:'Fresneda, Iván',pos:'DR/WBR',age:20,club:'Sporting CP',stars:'4★',budget:'중간',ready:'높음',note:'FM 단골 우풀백 유망주. 즉전감 좋음.'},
+      {rank:25,name:'Semih Kılıçsoy',search:'Kılıçsoy, Semih',pos:'ST/AML',age:19,club:'Beşiktaş',stars:'4.5★',budget:'중간',ready:'높음',note:'ST/윙 겸용. 가성비 공격수 후보.'},
+      {rank:26,name:'Francesco Camarda',search:'Camarda, Francesco',pos:'ST',age:17,club:'AC Milan',stars:'4.5★',budget:'비쌈',ready:'보통',note:'성장성은 훌륭하지만 가격이 높을 수 있음.'},
+      {rank:27,name:'Guillaume Restes',search:'Restes, Guillaume',pos:'GK',age:20,club:'Toulouse',stars:'4★',budget:'중간',ready:'높음',note:'GK 중 즉전감 우선 추천.'},
+      {rank:28,name:'Dennis Seimen',search:'Seimen, Dennis',pos:'GK',age:19,club:'Stuttgart',stars:'4★',budget:'중간',ready:'보통',note:'장기 주전감. 컵대회/로테부터.'},
+      {rank:29,name:'Vladyslav Krapyvtsov',search:'Krapyvtsov, Vladyslav',pos:'GK',age:20,club:'Girona',stars:'4★',budget:'저렴',ready:'보통',note:'중위권 팀에서 확인할 만한 GK.'}
     ];
 
     const $ = (id) => document.getElementById(id);
@@ -216,7 +216,7 @@
       const opt = document.createElement('option'); opt.value = p; opt.textContent = p; $('position').appendChild(opt);
     }
     function card(p) {
-      return `<article class="card top"><div class="row"><div><div class="pos">#${p.rank} · ${p.pos}</div><div class="name">${p.name}</div><div class="club">${p.club} · ${p.age}세</div></div><span class="badge star">${p.stars}</span></div><div class="badges"><span class="badge value">${p.budget}</span><span class="badge ready">즉전감 ${p.ready}</span></div><div class="note">${p.note}</div></article>`;
+      return `<article class="card top"><div class="row"><div><div class="pos">#${p.rank} · ${p.pos}</div><div class="name">${p.name}</div><div class="club">${p.club} · ${p.age}세${p.search ? ` · 검색: ${p.search}` : ''}</div></div><span class="badge star">${p.stars}</span></div><div class="badges"><span class="badge value">${p.budget}</span><span class="badge ready">즉전감 ${p.ready}</span></div><div class="note">${p.note}</div></article>`;
     }
     $('potentialGrid').innerHTML = potentialPlayers.map(card).join('');
     $('readyGrid').innerHTML = players.slice(0,10).map(card).join('');
@@ -242,13 +242,13 @@
       const pos = $('position').value;
       const budget = $('budget').value;
       const ready = $('ready').value;
-      const hay = `${p.name} ${p.pos} ${p.club} ${p.note}`.toLowerCase();
+      const hay = `${p.name} ${p.search || ""} ${p.pos} ${p.club} ${p.note}`.toLowerCase();
       return (!q || hay.includes(q)) && (!pos || p.pos.includes(pos)) && (!budget || p.budget === budget) && (!ready || p.ready === ready);
     }
     function render() {
       const list = players.filter(match);
       $('resultCount').textContent = list.length;
-      $('tbody').innerHTML = list.map(p => `<tr><td class="priority">${p.rank}</td><td><strong>${p.name}</strong><div class="small">${p.club}</div></td><td>${p.pos}</td><td>${p.age}</td><td>${p.club}</td><td>${p.stars}</td><td>${p.budget}</td><td>${p.ready}</td><td>${p.note}</td></tr>`).join('');
+      $('tbody').innerHTML = list.map(p => `<tr><td class="priority">${p.rank}</td><td><strong>${p.name}</strong><div class="small">${p.club}</div></td><td>${p.search || p.name}</td><td>${p.pos}</td><td>${p.age}</td><td>${p.club}</td><td>${p.stars}</td><td>${p.budget}</td><td>${p.ready}</td><td>${p.note}</td></tr>`).join('');
       $('empty').style.display = list.length ? 'none' : 'block';
     }
     ['q','position','budget','ready'].forEach(id => $(id).addEventListener('input', render));
