@@ -70,6 +70,7 @@
     .badge.star { color:#08111f; background:var(--warn); border-color:transparent; font-weight:800; }
     .badge.value { color:#07151e; background:var(--accent); border-color:transparent; font-weight:800; }
     .badge.ready { color:#07151e; background:#9ed0ff; border-color:transparent; font-weight:800; }
+    .badge.tactic { color:#08111f; background:#d6a4ff; border-color:transparent; font-weight:800; }
     .note { color:#cfdbef; line-height:1.55; font-size:14px; }
     .table-wrap { overflow:auto; border:1px solid var(--line); border-radius:22px; background:rgba(255,255,255,.055); }
     table { width:100%; border-collapse:collapse; min-width:900px; }
@@ -123,6 +124,13 @@
       <div id="readyGrid" class="grid"></div>
     </section>
 
+    <section>
+      <div class="section-head">
+        <div><h2>FM26 Mobile 추천 전술</h2><div class="hint">모바일 전용/모바일 테스트 자료 기준. 스쿼드에 맞춰 3-4-3, 4-3-3, 4-2-3-1부터 시도하세요.</div></div>
+      </div>
+      <div id="tacticGrid" class="grid"></div>
+    </section>
+
     <div class="controls">
       <div class="control-panel">
         <input id="q" placeholder="선수명, 소속, 포지션 검색" />
@@ -148,7 +156,7 @@
     <footer>
       <strong>출처/주의</strong><br/>
       FMM Vibe의 FM26 Mobile Wonderkids Complete List와 FM26 Mobile 추천 글을 바탕으로 정리했습니다. 상단 포텐순 리스트는 가격을 제외한 성장성 기준이고, 즉전감 리스트와 전체 표는 가성비/실사용성을 반영했습니다. 별점은 잠재력 평가이며, 실제 능력치/가격/이적 가능성은 세이브, 선택 리그, 패치 버전에 따라 달라질 수 있습니다. 아이폰에서는 이 페이지를 보고 게임 내 선수 검색으로 확인하는 방식이 가장 안전합니다.<br/>
-      Sources: <a href="https://fmmvibe.com/forums/topic/50429-fm26-mobile-wonderkids-complete-list/">FMM Vibe</a>, <a href="https://ingenuityfantasy.com/feature-articles/fm26-mobile-best-wonderkids-the-touchscreen-gods/">Ingenuity Fantasy</a>
+      Sources: <a href="https://fmmvibe.com/forums/topic/50429-fm26-mobile-wonderkids-complete-list/">FMM Vibe</a>, <a href="https://ingenuityfantasy.com/feature-articles/fm26-mobile-best-wonderkids-the-touchscreen-gods/">Ingenuity Fantasy Wonderkids</a>, <a href="https://ingenuityfantasy.com/feature-articles/7550-2/">Ingenuity Fantasy Tactics</a>, <a href="https://vortexgaming.io/en/postdetail/735606">Vortex Gaming Tactics</a>
     </footer>
   </div>
 
@@ -212,6 +220,22 @@
     }
     $('potentialGrid').innerHTML = potentialPlayers.map(card).join('');
     $('readyGrid').innerHTML = players.slice(0,10).map(card).join('');
+
+
+    const tactics = [
+      {rank:1,name:'3-4-3 Press / Wingback Meta',shape:'3-4-3',best:'강팀·윙백 좋은 팀',difficulty:'보통',note:'모바일에서 가장 자주 언급되는 메타 계열. 윙백으로 폭을 만들고, 양쪽 인사이드포워드/윙어와 ST가 빠르게 박스에 진입. 기본은 Positive/Attacking, 압박은 높게 시작하되 실점이 많으면 한 단계 낮추기.'},
+      {rank:2,name:'4-3-3 Possession + Counter Hybrid',shape:'4-3-3 / 4-1-2-2-1',best:'대부분의 팀',difficulty:'쉬움',note:'가장 범용적인 기본 전술. DLP/수미가 빌드업을 잡고, 양쪽 IF/IW와 오버랩 풀백으로 찬스 생성. 스쿼드가 애매하면 이 전술부터 추천.'},
+      {rank:3,name:'4-2-3-1 Counter Winner',shape:'4-2-3-1',best:'중위권·원정 경기',difficulty:'쉬움',note:'두 명의 중앙 미드필더로 수비 안정감을 확보하고 AMC와 양쪽 윙어가 역습. 상대가 강하거나 원정이면 Counter/Normal로 시작하기 좋음.'},
+      {rank:4,name:'5-2-1-2 Stable Wingback',shape:'5-2-1-2',best:'수비 안정·투톱 보유팀',difficulty:'보통',note:'Vortex가 FMM Vibe 고평가 전술로 소개. 수비가 단단하고 윙백이 공격 폭을 담당. 좋은 ST 2명과 체력 좋은 윙백이 있으면 효율적.'},
+      {rank:5,name:'3-1-4-2 Overload Attack',shape:'3-1-4-2',best:'득점력 필요한 강팀',difficulty:'어려움',note:'공격적으로 몰아치는 전술. Vortex 소개 세팅은 Overload, Narrow, Higher Tempo, Much More Urgent Pressing. 강팀용이며 수비 전환이 약하면 실점 위험.'},
+      {rank:6,name:'4-4-2 Direct / Haramball',shape:'4-4-2',best:'피지컬·체력 좋은 팀',difficulty:'쉬움',note:'규율, 체력, 직접적인 축구에 초점. B2B 미드필더와 빠르거나 큰 ST 조합에 좋음. 약팀이 결과를 가져올 때 쓸 만함.'},
+      {rank:7,name:'3-5-2 Engine Workrate',shape:'3-5-2',best:'중앙 장악·투톱팀',difficulty:'보통',note:'중앙을 지배하고 윙백/와이드 미드필더가 폭을 담당. 스태미너 좋은 B2B 자원이 많을수록 좋음.'}
+    ];
+
+    function tacticCard(t) {
+      return `<article class="card"><div class="row"><div><div class="pos">#${t.rank} · ${t.shape}</div><div class="name">${t.name}</div><div class="club">추천: ${t.best}</div></div><span class="badge tactic">${t.difficulty}</span></div><div class="badges"><span class="badge ready">모바일용</span><span class="badge">${t.shape}</span></div><div class="note">${t.note}</div></article>`;
+    }
+    $('tacticGrid').innerHTML = tactics.map(tacticCard).join('');
 
     function match(p) {
       const q = $('q').value.trim().toLowerCase();
